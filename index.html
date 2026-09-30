@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Official website of Ishita's Fun Time - videos, entertainment and video suggestions.">
+
+    <title>Ishita's Fun Time | Official Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #080812;
+            --card: #15152a;
+            --purple: #8b5cf6;
+            --pink: #ec4899;
+            --text: #ffffff;
+            --muted: #a8a8bd;
+            --border: rgba(255,255,255,0.10);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(139,92,246,0.20),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom left,
+                    rgba(236,72,153,0.12),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(8,8,18,0.90);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple);
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 82vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #ec4899
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 24px;
+
+            border-radius: 12px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(
+                135deg,
+                var(--purple),
+                var(--pink)
+            );
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(139,92,246,0.25);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 45px;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+        }
+
+        .stat {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat h3 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           VIDEOS
+        ========================== */
+
+        .videos {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .video-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(139,92,246,0.5);
+        }
+
+        .video-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                rgba(139,92,246,0.15);
+
+            border-radius: 14px;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .video-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .video-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .watch-btn {
+            color: #c4b5fd;
+            font-weight: 700;
+        }
+
+        .watch-btn:hover {
+            color: white;
+        }
+
+        /* =========================
+           SUGGESTION FORM
+        ========================== */
+
+        .suggest-box {
+            max-width: 700px;
+
+            margin: auto;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(139,92,246,0.12),
+                    rgba(236,72,153,0.06)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 25px;
+
+            padding: 40px;
+        }
+
+        .suggest-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 15px 16px;
+
+            background: rgba(0,0,0,0.25);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            color: white;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--purple);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(139,92,246,0.12);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            border: none;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--pink)
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(139,92,246,0.25);
+        }
+
+        .privacy-note {
+            color: #88889d;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about p {
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           YOUTUBE SECTION
+        ========================== */
+
+        .youtube-box {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.18),
+                    rgba(236,72,153,0.10)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 25px;
+
+            padding: 60px 25px;
+        }
+
+        .youtube-box h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .youtube-box p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 35px 7%;
+
+            text-align: center;
+
+            color: #85859a;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .videos {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .suggest-box {
+                padding: 25px;
+            }
+
+            .youtube-box h2 {
+                font-size: 30px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <a href="#home" class="logo">
+            Ishita's <span>Fun Time</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#videos">Videos</a>
+            </li>
+
+            <li>
+                <a href="#suggest">Give Ideas</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h1>
+                    Welcome to
+                    <span>Ishita's Fun Time</span>
+                </h1>
+
+                <p>
+                    Fun videos, entertainment, challenges,
+                    creativity and much more!
+                    Join the journey and be part of the fun.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="https://www.youtube.com/@Ishitafuntime3600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                    >
+                        ▶ Visit YouTube Channel
+                    </a>
+
+                    <a
+                        href="#suggest"
+                        class="btn btn-secondary"
+                    >
+                        💡 Give a Video Idea
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <section>
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <h3>🎬</h3>
+
+                    <p>
+                        Fun Videos
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>💡</h3>
+
+                    <p>
+                        Viewer Ideas
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>❤️</h3>
+
+                    <p>
+                        Fun Community
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             VIDEOS
+        ========================== -->
+
+        <section id="videos">
+
+            <h2 class="section-title">
+                Featured Videos
+            </h2>
+
+            <p class="section-subtitle">
+                Check out the channel and discover
+                the latest videos from Ishita's Fun Time.
+            </p>
+
+
+            <div class="videos">
+
+                <div class="video-card">
+
+                    <div class="video-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Latest Videos
+                    </h3>
+
+                    <p>
+                        Watch the newest videos
+                        uploaded to the channel.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/@Ishitafuntime3600/videos"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="watch-btn"
+                    >
+                        Watch Videos →
+                    </a>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="video-icon">
+                        😂
+                    </div>
+
+                    <h3>
+                        Fun & Entertainment
+                    </h3>
+
+                    <p>
+                        Enjoy entertaining content
+                        and fun moments.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/@Ishitafuntime3600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="watch-btn"
+                    >
+                        Explore Channel →
+                    </a>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="video-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        Your Ideas
+                    </h3>
+
+                    <p>
+                        Have an idea for a future video?
+                        Send it through this website.
+                    </p>
+
+                    <a
+                        href="#suggest"
+                        class="watch-btn"
+                    >
+                        Suggest One →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GIVE IDEAS
+        ========================== -->
+
+        <section id="suggest">
+
+            <h2 class="section-title">
+                💡 Give Your Video Idea
+            </h2>
+
+            <p class="section-subtitle">
+                Have an awesome idea for a video?
+                Tell us! Your suggestion will be
+                sent directly to Ishita's email.
+            </p>
+
+
+            <div class="suggest-box">
+
+                <!--
+                    FORM SUBMISSION
+
+                    Suggestions are sent to:
+                    ishita3raj3@gmail.com
+                -->
+
+                <form
+                    class="suggest-form"
+                    action="https://formsubmit.co/ishita3raj3@gmail.com"
+                    method="POST"
+                >
+
+                    <!-- Email subject -->
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Video Idea - Ishita's Fun Time"
+                    >
+
+
+                    <!-- Email format -->
+
+                    <input
+                        type="hidden"
+                        name="_template"
+                        value="table"
+                    >
+
+
+                    <!-- Website to return to -->
+
+                    <input
+                        type="hidden"
+                        name="_next"
+                        value="https://arnavrajaa-hub.github.io/ishitas-fun-time/"
+                    >
+
+
+                    <!-- Spam protection -->
+
+                    <input
+                        type="text"
+                        name="_honey"
+                        style="display:none"
+                        tabindex="-1"
+                        autocomplete="off"
+                    >
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            maxlength="80"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                            <span style="color:#888;">
+                                (optional)
+                            </span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                        >
+
+                    </div>
+
+
+                    <!-- VIDEO IDEA -->
+
+                    <div class="form-group">
+
+                        <label for="idea">
+                            Your Video Idea
+                        </label>
+
+                        <textarea
+                            id="idea"
+                            name="video_idea"
+                            placeholder="Tell us your awesome video idea..."
+                            maxlength="2000"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SEND BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        🚀 Send Video Idea
+                    </button>
+
+
+                    <p class="privacy-note">
+                        Your suggestion will be sent to
+                        ishita3raj3@gmail.com.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <div class="about">
+
+                <h2 class="section-title">
+                    About Ishita's Fun Time
+                </h2>
+
+                <p>
+                    Welcome to the official website
+                    of Ishita's Fun Time!
+                </p>
+
+                <p>
+                    This website is a place where viewers
+                    can discover the YouTube channel,
+                    find videos and send ideas for future
+                    content.
+                </p>
+
+                <p>
+                    Your ideas can help make future videos
+                    even more fun and exciting! 💜
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             YOUTUBE CTA
+        ========================== -->
+
+        <section>
+
+            <div class="youtube-box">
+
+                <h2>
+                    Ready for More? 🎬
+                </h2>
+
+                <p>
+                    Visit the YouTube channel to watch
+                    the latest content from
+                    Ishita's Fun Time.
+                </p>
+
+                <a
+                    href="https://www.youtube.com/@Ishitafuntime3600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    ▶ Open YouTube Channel
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <strong>Ishita's Fun Time</strong>.
+            All rights reserved.
+        </p>
+
+        <p style="margin-top:8px;">
+            Made with ❤️ for the community.
+        </p>
+
+    </footer>
+
+</body>
+</html>
